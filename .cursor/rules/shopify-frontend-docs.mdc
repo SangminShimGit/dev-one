@@ -1,0 +1,46 @@
+---
+description: Maintain frontend.md documentation for this Shopify theme
+alwaysApply: true
+---
+
+# Shopify Theme Frontend Documentation
+
+Keep `frontend.md` at the project root accurate and up to date. Create it if missing; update it when frontend structure, patterns, or conventions change.
+
+## When to update
+
+Update `frontend.md` after changes to:
+
+- `layout/`, `sections/`, `snippets/`, `templates/`, `assets/`
+- Theme settings in `config/settings_schema.json` or CSS variables in `layout/theme.liquid`
+- JS architecture (`global.js`, `pubsub.js`, component scripts)
+- New reusable patterns (snippets, CSS components, JS modules)
+
+Do not update for locale-only changes unless they affect visible UI behavior.
+
+## How to maintain
+
+1. Read existing `frontend.md` before editing.
+2. Scan the codebase — do not guess file paths or patterns.
+3. Update only affected sections; keep prose concise.
+4. List real file paths (e.g. `sections/main-product.liquid`, not "product section").
+5. Note Dawn conventions this theme follows or diverges from.
+
+## Required sections in frontend.md
+
+1. **Overview** — theme name, base (Dawn), Shopify Online Store 2.0
+2. **Directory map** — layout, sections, snippets, templates, assets, config, locales
+3. **Rendering flow** — `layout/theme.liquid` → JSON templates → sections → snippets
+4. **CSS** — `assets/base.css`, `component-*.css`, `section-*.css`; CSS variables from `theme.liquid` `:root`
+5. **JavaScript** — `global.js`, `pubsub.js`, `constants.js`; defer loading; component JS files
+6. **Liquid conventions** — section schema, `{% render %}`, `{% liquid %}`, translation keys (`t:`)
+7. **Key pages** — map templates to sections (product, collection, cart, etc.)
+8. **Reusable snippets** — product card, price, facets, cart drawer, etc.
+9. **Theme settings** — colors, typography, spacing tokens exposed to CSS variables
+10. **Conventions** — naming (`main-*`, `component-*`), BEM-like classes, accessibility notes
+
+## Style
+
+- Factual, scannable (headings, tables, bullet lists)
+- No placeholder content — document what exists in the repo
+- Link Shopify docs where helpful: https://shopify.dev/docs/storefronts/themes
